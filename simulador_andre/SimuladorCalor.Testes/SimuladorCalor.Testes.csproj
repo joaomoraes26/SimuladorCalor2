@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Projeto console de testes. Nao usa Windows Forms, entao roda em Windows, Linux ou Mac:
+       dotnet run (dentro da pasta SimuladorCalor.Testes) -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MySqlConnector" Version="2.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- usa os MESMOS arquivos do programa (link, nao copia): o que e testado aqui e exatamente o que roda na tela -->
+    <Compile Include="..\SimuladorCalor\Material.cs" Link="Programa\Material.cs" />
+    <Compile Include="..\SimuladorCalor\Corpo.cs" Link="Programa\Corpo.cs" />
+    <Compile Include="..\SimuladorCalor\Simulador.cs" Link="Programa\Simulador.cs" />
+    <Compile Include="..\SimuladorCalor\Registros.cs" Link="Programa\Registros.cs" />
+    <Compile Include="..\SimuladorCalor\ConfiguracaoBanco.cs" Link="Programa\ConfiguracaoBanco.cs" />
+    <Compile Include="..\SimuladorCalor\GravadorBanco.cs" Link="Programa\GravadorBanco.cs" />
+    <Compile Include="..\SimuladorCalor\LeitorBanco.cs" Link="Programa\LeitorBanco.cs" />
+  </ItemGroup>
+
+</Project>

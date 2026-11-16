@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="SimuladorCalor/SimuladorCalor.csproj" />
+  <Project Path="SimuladorCalor.Testes/SimuladorCalor.Testes.csproj" />
+</Solution>
