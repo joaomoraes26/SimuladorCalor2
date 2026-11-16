@@ -53,6 +53,9 @@
             label1 = new Label();
             picGrade = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
+            chkParalelo = new CheckBox();
+            chkGravarBanco = new CheckBox();
+            lblBanco = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numPassos).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numTempCorpo).BeginInit();
@@ -64,6 +67,9 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(lblBanco);
+            panel1.Controls.Add(chkGravarBanco);
+            panel1.Controls.Add(chkParalelo);
             panel1.Controls.Add(numPassos);
             panel1.Controls.Add(lblVelocidade);
             panel1.Controls.Add(lblStatus);
@@ -85,6 +91,7 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(numN);
             panel1.Controls.Add(label1);
+            panel1.AutoScroll = true;
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -276,7 +283,7 @@
             // numN
             // 
             numN.Location = new Point(26, 37);
-            numN.Maximum = new decimal(new int[] { 20, 0, 0, 0 });
+            numN.Maximum = new decimal(new int[] { 200, 0, 0, 0 });
             numN.Minimum = new decimal(new int[] { 2, 0, 0, 0 });
             numN.Name = "numN";
             numN.Size = new Size(206, 23);
@@ -292,6 +299,38 @@
             label1.TabIndex = 0;
             label1.Text = "Tamanho da Matriz (N)";
 
+            // 
+            // chkParalelo
+            // 
+            chkParalelo.AutoSize = true;
+            chkParalelo.Checked = true;
+            chkParalelo.CheckState = CheckState.Checked;
+            chkParalelo.Location = new Point(23, 780);
+            chkParalelo.Name = "chkParalelo";
+            chkParalelo.Size = new Size(205, 19);
+            chkParalelo.TabIndex = 23;
+            chkParalelo.Text = "Paralelo em blocos (Invoke)";
+            chkParalelo.UseVisualStyleBackColor = true;
+            // 
+            // chkGravarBanco
+            // 
+            chkGravarBanco.AutoSize = true;
+            chkGravarBanco.Checked = true;
+            chkGravarBanco.CheckState = CheckState.Checked;
+            chkGravarBanco.Location = new Point(23, 803);
+            chkGravarBanco.Name = "chkGravarBanco";
+            chkGravarBanco.Size = new Size(160, 19);
+            chkGravarBanco.TabIndex = 24;
+            chkGravarBanco.Text = "Gravar no banco MySQL";
+            chkGravarBanco.UseVisualStyleBackColor = true;
+            // 
+            // lblBanco
+            // 
+            lblBanco.Location = new Point(23, 826);
+            lblBanco.Name = "lblBanco";
+            lblBanco.Size = new Size(210, 75);
+            lblBanco.TabIndex = 25;
+            lblBanco.Text = "Banco: aguardando";
             // 
             // picGrade
             // 
@@ -320,6 +359,7 @@
             Name = "Form1";
             Text = "Sistema de Troca de Calor";
             Load += Form1_Load;
+            FormClosing += Form1_FormClosing;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numPassos).EndInit();
@@ -357,5 +397,8 @@
         private System.Windows.Forms.Timer timer1;
         private Label lblVelocidade;
         private NumericUpDown numPassos;
+        private CheckBox chkParalelo;
+        private CheckBox chkGravarBanco;
+        private Label lblBanco;
     }
 }
